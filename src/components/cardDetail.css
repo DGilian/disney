@@ -32,10 +32,10 @@ article header .title{
 }
 .publishDate{
    text-align: right;
+   font-size: 1.2rem;
 }
 .publishDate p{
     margin:0;
-    font-size: 1.4rem;
 }
 article .hidden{
     display: none;

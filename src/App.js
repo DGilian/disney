@@ -30,10 +30,9 @@ class App extends Component {
     return (
       <main className="App">
         <div className="container">
-          <section className="imageBack">
-            <img src={backgroundGrey} />
-            <img src={vegetation} />
-            <p>hello world</p>
+          <section className="sectionImgBackground">
+            <section className="backgGrey" style={{backgroundImage: `url(${backgroundGrey})`}}></section>
+            <section className="backgVegetation"style={{backgroundImage: `url(${vegetation})`}}>Hello world</section>
           </section>
           <section className ="listContent">
             <div className = "containerList">
