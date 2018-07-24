@@ -18,15 +18,15 @@ class App extends Component {
     this.setState({
       show : "cars"
     })
-
   }
+
   handleclickHotel=()=>{
     this.setState({
       show : "hotels"
     })
   }
-  render() {
 
+  render() {
     return (
       <main className="App">
         <div className="container">

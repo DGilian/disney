@@ -1,21 +1,26 @@
 import React, { Component } from 'react'
 import './cardDetail.css'
+import arrowUp from '../img/arrow-up.svg.png'
 
 export default class CardDetail extends Component {
   constructor(props){
     super(props)
   }
-
+  handleClick(){
+    console.log("add class hidden")
+  }
   render() {
     const {title, imgPath, reservation, description , arrivalDate, departureDate, energy, power, price, show, year, datePublication} = this.props
 
-      console.log(this.props)
-      console.log(description)
     const sourceImg = require('../'+imgPath)
 
     return (
       <article>
-        <h3>{title}</h3>
+        <header>
+          <h3>{title}</h3>
+          <img  className="arrowUp" src={arrowUp} onClick = {this.handleClick}/>
+        </header>
+        <hr />
         <div className="content">
           <img className="img" src={sourceImg}/>
           {show === "hotels" ?
@@ -36,7 +41,10 @@ export default class CardDetail extends Component {
            }  
         </div>
         {show === "cars" ?
-          <p>Publié le {datePublication}</p> : <p></p>}
+        <div>
+          <hr />
+          <p>Publié le {datePublication}</p>
+        </div> : ""}
       </article>
     )
   }

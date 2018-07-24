@@ -24,3 +24,7 @@ justify-content: center;
 .containerList{
   margin: 2rem;
 }
+
+.containerList article{
+  margin: 1rem 0;
+}
