@@ -69,5 +69,15 @@ justify-content: center;
   }
   .sectionImgBackground{
     width: 100%;
-  }  
+  }
+  .containerList button{
+    margin: 2rem;
+  }
+  .containerList article{
+    margin: 0;
+  }
+  .containerList article:nth-of-type(2n+1) .img  {
+    width: 100%;
+    height: 250px;
+  }
 }
