@@ -3,6 +3,7 @@ import './App.css';
 import backgroundGrey from './images/Fond.png'
 import vegetation from './images/Image2.png'
 import viewtemp from './images/cars_view.jpg'
+import CardDetail from './components/CardDetail'
 
 class App extends Component {
   render() {
@@ -17,6 +18,7 @@ class App extends Component {
           <section className ="listContent">
             <button>Hôtels</button>
             <button>Voitures</button>
+            <CardDetail/>
           </section>
         </div>
       </main>
