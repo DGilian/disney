@@ -11,18 +11,18 @@ class App extends Component {
   constructor(){
     super()
     this.state = {
-      show : "car"
+      show : "hotels"
     }
   }
   handleclickCar= ()=>{
     this.setState({
-      show : "car"
+      show : "cars"
     })
 
   }
   handleclickHotel=()=>{
     this.setState({
-      show : "hotel"
+      show : "hotels"
     })
   }
   render() {
@@ -40,17 +40,32 @@ class App extends Component {
               <button onClick = {this.handleclickHotel}>Hôtels</button>
               <button onClick = {this.handleclickCar}>Voitures</button>
              
-              {dataHotels.map( (value)=>{
+              { this.state.show === "hotels" ?
+              dataHotels.map( (value)=>{
                 return <CardDetail 
-                key={value.name} 
-                title={value.name}
-                imgPath = {value.imgPath}
-                reservation = {value.nbReservationLast24hours}
-                description ={value.description}
-                arrivalDate = {value.dates.arrivalDate}
-                departureDate = {value.dates.departureDate}/>
+                  key={value.name} 
+                  title={value.name}
+                  imgPath = {value.imgPath}
+                  reservation = {value.nbReservationLast24hours}
+                  description ={value.description}
+                  arrivalDate = {value.dates.arrivalDate}
+                  departureDate = {value.dates.departureDate}
+                  show = {this.state.show}/>
+              }) :
+              dataCars.map( (car) =>{
+                return <CardDetail 
+                  key = {car.type}
+                  title = {car.brand+' '+car.type}
+                  imgPath = {car.imgPath}
+                  power = {car.power}
+                  energy = {car.energy}
+                  year = {car.year}
+                  price = {car.price}
+                  datePublication = {car.datePublication}
+                  show = {this.state.show}
+                />
               }) }
-             
+                
             </div>
           </section>
         </div>
