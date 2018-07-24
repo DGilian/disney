@@ -8,15 +8,16 @@ class App extends Component {
   render() {
     return (
       <main className="App">
-        <section>
-          <img src={backgroundGrey} />
-          <img src={vegetation} />
-         <p>hello world</p>
-        </section>
-       <section>
-
-       </section>
-       <img src={viewtemp}/>
+        <div className="container">
+          <section className="imageBack">
+            <img src={backgroundGrey} />
+            <img src={vegetation} />
+            <p>hello world</p>
+          </section>
+          <section className ="listContent">
+            <p>hello</p>
+          </section>
+        </div>
       </main>
     );
   }
