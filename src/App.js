@@ -15,7 +15,8 @@ class App extends Component {
             <p>hello world</p>
           </section>
           <section className ="listContent">
-            <p>hello</p>
+            <button>Hôtels</button>
+            <button>Voitures</button>
           </section>
         </div>
       </main>
