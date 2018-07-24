@@ -16,9 +16,11 @@ class App extends Component {
             <p>hello world</p>
           </section>
           <section className ="listContent">
-            <button>Hôtels</button>
-            <button>Voitures</button>
-            <CardDetail/>
+            <div className = "containerList">
+              <button>Hôtels</button>
+              <button>Voitures</button>
+              <CardDetail/>
+            </div>
           </section>
         </div>
       </main>
