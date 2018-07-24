@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import backgroundGrey from './images/Fond.png'
-import vegetation from './images/Image2.png'
+import backgroundGrey from './img/Fond.png'
+import vegetation from './img/Image2.png'
 import CardDetail from './components/CardDetail'
 
 import dataCars from './json/cars.json'
@@ -41,8 +41,15 @@ class App extends Component {
               <button onClick = {this.handleclickCar}>Voitures</button>
              
               {dataHotels.map( (value)=>{
-                return <CardDetail key={value.name} title={value.name}/>
-              })  }
+                return <CardDetail 
+                key={value.name} 
+                title={value.name}
+                imgPath = {value.imgPath}
+                reservation = {value.nbReservationLast24hours}
+                description ={value.description}
+                arrivalDate = {value.dates.arrivalDate}
+                departureDate = {value.dates.departureDate}/>
+              }) }
              
             </div>
           </section>
