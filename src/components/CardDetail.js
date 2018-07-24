@@ -1,13 +1,27 @@
 import React, { Component } from 'react'
 import './cardDetail.css'
 import arrowUp from '../img/arrow-up.svg.png'
+import arrowDown from '../img/arrow-down.svg.png'
 
 export default class CardDetail extends Component {
   constructor(props){
     super(props)
+    this.state = {
+      isHidden : false
+    }
   }
-  handleClick(){
-    console.log("add class hidden")
+  //arrow function for binding
+  handleClick = () =>{
+    if(this.state.isHidden === false){
+      this.setState({
+        isHidden: !this.state.isHidden
+      })
+    }
+    else(
+      this.setState({
+        isHidden : false
+      })
+    )
   }
   render() {
     const {title, imgPath, reservation, description , arrivalDate, departureDate, energy, power, price, show, year, datePublication} = this.props
@@ -18,10 +32,12 @@ export default class CardDetail extends Component {
       <article>
         <header>
           <h3>{title}</h3>
-          <img  className="arrowUp" src={arrowUp} onClick = {this.handleClick}/>
+          <img  className="arrowUp" 
+                src={this.state.isHidden ? arrowDown : arrowUp} 
+                onClick = {this.handleClick}/>
         </header>
         <hr />
-        <div className="content">
+        <div className={this.state.isHidden ? "content hidden" : "content"}>
           <img className="img" src={sourceImg}/>
           {show === "hotels" ?
             <div>
@@ -41,7 +57,7 @@ export default class CardDetail extends Component {
            }  
         </div>
         {show === "cars" ?
-        <div>
+        <div className={this.state.isHidden ? "publishDate hidden" : "publishDate"}>
           <hr />
           <p>Publié le {datePublication}</p>
         </div> : ""}
