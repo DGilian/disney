@@ -1,28 +1,42 @@
 article{
     background-color: white;
+    width: 471px;
+    font-size: 2rem;
 }
 .content{
     display: flex;
-    height: 150px;
-    font-size: 0.8rem;
+    font-size: 1.2rem;
     color: #444;
+}
+.content .detailText{
+    margin-left: 1.5rem;
+}
+.content ul{
+    list-style-type: square;
 }
 article header{
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+article header .title{
+    margin:0;
+}
 .arrowUp{
     width: 15px;
     height: 15px;
 }
 .img{
-    width: 150px;
+    width: 160px;
+    height: 90px;
 }
 .publishDate{
    text-align: right;
 }
-
+.publishDate p{
+    margin:0;
+    font-size: 1.4rem;
+}
 article .hidden{
     display: none;
 }

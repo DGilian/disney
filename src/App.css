@@ -1,7 +1,15 @@
-html{
-  font-size: 62,5%;
+*{
+  box-sizing: border-box;
+  outline: none;
 }
-
+html{
+  font-size: 62.5%;
+  overflow-y: auto;
+  min-height: 100%;
+}
+body{
+  margin : 0;
+}
 .App{
 display: flex;
 justify-content: center;
@@ -17,6 +25,8 @@ justify-content: center;
 }
 
 .listContent{
+  display: flex;
+  justify-content: center;
   width: 54%;
   background-color: #ff9001;
 }
@@ -24,8 +34,13 @@ justify-content: center;
 .containerList{
   margin: 2rem;
 }
+.containerList button{
+  font-size : 3.2rem;
+  margin-right: 2rem;
+}
 
 .containerList article{
-  margin: 1rem 0;
+  margin: 1.5rem 0;
+  padding: 2rem;
 }
 
