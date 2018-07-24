@@ -31,8 +31,13 @@ class App extends Component {
       <main className="App">
         <div className="container">
           <section className="sectionImgBackground">
-            <section className="backgGrey" style={{backgroundImage: `url(${backgroundGrey})`}}></section>
-            <section className="backgVegetation"style={{backgroundImage: `url(${vegetation})`}}>Hello world</section>
+            <section className="backgGrey" style={{
+              backgroundImage: `url(${backgroundGrey})`,
+              backgroundSize: 'cover'}}>
+            </section>
+            <section className="backgVegetation"style={{
+              backgroundImage: `url(${vegetation})`,
+              backgroundSize: 'cover'}}>Hello world</section>
           </section>
           <section className ="listContent">
             <div className = "containerList">

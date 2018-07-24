@@ -21,7 +21,7 @@ justify-content: center;
 }
 .sectionImgBackground{
   flex-direction: column;
-  width: 46%;
+  width: 54%;
   background-color: rgb(223, 219, 219);
 }
 .sectionImgBackground .backgGrey{
@@ -39,7 +39,6 @@ justify-content: center;
 .listContent{
   display: flex;
   justify-content: center;
-  width: 54%;
   background-color: #ff9001;
 }
 
@@ -49,10 +48,26 @@ justify-content: center;
 .containerList button{
   font-size : 3.2rem;
   margin-right: 2rem;
+  background-color: white;
 }
 
 .containerList article{
   margin: 1.5rem 0;
   padding: 1.5rem;
 }
-
+@media screen and (max-width: 640px){
+  .container{
+    display: flex;
+    flex-direction: column;
+  }
+  .listContent{
+    order: -1;
+  }
+  .containerList{
+    margin: 0;
+    width: 100%;
+  }
+  .sectionImgBackground{
+    width: 100%;
+  }  
+}

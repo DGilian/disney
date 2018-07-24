@@ -40,3 +40,19 @@ article header .title{
 article .hidden{
     display: none;
 }
+@media screen and (max-width: 640px){
+    article{
+        width: 100%;
+    }
+    article .content{
+        flex-direction : column;
+    }
+    .content .detailText{
+        margin:0;
+        width: 50%;
+    }
+    .content .img{
+        width: 450px;
+        height: 250px;
+    }
+  }
