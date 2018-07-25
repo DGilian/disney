@@ -38,30 +38,30 @@ export default class CardDetail extends Component {
                 alt="symbol arrowUp"/>
         </header>
         <hr />
-        <div className={this.state.isHidden ? "content hidden" : "content"}>
-          <img className={ show ==="hotels" ? "img" : "imgCar"} src={sourceImg} alt={"image"+title}/>
-          {show === "hotels" ?
-            <div className="detailText">
-              <p>Réservé {reservation} fois dans les dernières 24 heures</p>
-              <p>{description}</p>
-              <p>Arrivée le : {arrivalDate} <br /> Départ le : {departureDate} </p>
-           </div> 
-           :
-           <div>
-             <ul>
-               <li>Puissance : {power} CV</li>
-               <li>Energie : {energy}</li>
-               <li>Année : {year}</li>
-               <li>Prix : {price}</li>
-             </ul>
-           </div>
-           }  
-        </div>
-        {show === "cars" ?
-        <div className={this.state.isHidden ? "publishDate hidden" : "publishDate"}>
-          <hr />
-          <p>Publié le {datePublication}</p>
-        </div> : ""}
+            <div className= {this.state.isHidden ? "content hidden" : "content"}>
+              <img className={ show ==="hotels" ? "img" : "imgCar"} src={sourceImg} alt={"image"+title}/>
+              {show === "hotels" ?
+                <div className="detailText">
+                  <p>Réservé {reservation} fois dans les dernières 24 heures</p>
+                  <p>{description}</p>
+                  <p>Arrivée le : {arrivalDate} <br /> Départ le : {departureDate} </p>
+              </div> 
+              :
+              <div>
+                <ul>
+                  <li>Puissance : {power} CV</li>
+                  <li>Energie : {energy}</li>
+                  <li>Année : {year}</li>
+                  <li>Prix : {price}</li>
+                </ul>
+              </div>
+              }  
+            </div>
+            {show === "cars" ?
+            <div className={this.state.isHidden ? "publishDate hidden" : "publishDate"}>
+              <hr />
+              <p>Publié le {datePublication}</p>
+            </div> : ""}
       </article>
     )
   }
