@@ -34,11 +34,12 @@ export default class CardDetail extends Component {
           <h3 className="title">{title}</h3>
           <img  className="arrowUp" 
                 src={this.state.isHidden ? arrowDown : arrowUp} 
-                onClick = {this.handleClick}/>
+                onClick = {this.handleClick}
+                alt="symbol arrowUp"/>
         </header>
         <hr />
         <div className={this.state.isHidden ? "content hidden" : "content"}>
-          <img className="img" src={sourceImg}/>
+          <img className={ show ==="hotels" ? "img" : "imgCar"} src={sourceImg} alt={"image"+title}/>
           {show === "hotels" ?
             <div className="detailText">
               <p>Réservé {reservation} fois dans les dernières 24 heures</p>

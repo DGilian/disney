@@ -26,8 +26,8 @@ article header .title{
     width: 15px;
     height: 15px;
 }
+.imgCar,
 .img{
-    width: 160px;
     height: 90px;
 }
 .publishDate{
@@ -53,6 +53,7 @@ article .hidden{
         margin:0;
         width: 50%;
     }
+    .imgCar,
     .content .img{
         width: 450px;
         height: 250px;
