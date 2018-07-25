@@ -45,11 +45,12 @@ justify-content: center;
   margin: 2rem;
 }
 .containerList button{
-  font-size : 3.2rem;
+  font-size : 2.5rem;
   margin-right: 2rem;
   background-color: white;
   border: none;
   padding: 1rem;
+  font-weight: bold;
 }
 .containerList button:hover{
   box-shadow: inset 0 -7px 0 rgb(216, 213, 213);
