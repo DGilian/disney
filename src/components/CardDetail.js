@@ -1,23 +1,23 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import './cardDetail.css';
-import arrowUp from '../img/arrow-up.svg.png';
-import arrowDown from '../img/arrow-down.svg.png';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import './cardDetail.css'
+import arrowUp from '../img/arrow-up.svg.png'
+import arrowDown from '../img/arrow-down.svg.png'
 
 export default class CardDetail extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
-      isHidden: false,
-    };
+      isHidden: false
+    }
   }
 
   // arrow function for binding
   handleClick = () => {
     this.setState({
-      isHidden: !this.state.isHidden,
-    });
-  };
+      isHidden: !this.state.isHidden
+    })
+  }
 
   render() {
     const {
@@ -32,36 +32,35 @@ export default class CardDetail extends Component {
       price,
       show,
       year,
-      datePublication,
-    } = this.props;
+      datePublication
+    } = this.props
 
-    const sourceImg = require(`../${imgPath}`);
-    const { isHidden } = this.state;
+    const sourceImg = require(`../${imgPath}`)
+    const { isHidden } = this.state
 
     return (
       <article>
         <header>
-          <h3 className="title">
-            {title}
-          </h3>
+          <h3 className="title">{title}</h3>
           <img
             className="arrowUp"
-            src={this.state.isHidden ? arrowDown : arrowUp}
+            src={isHidden ? arrowDown : arrowUp}
             onClick={this.handleClick}
             alt="symbol arrowUp"
           />
         </header>
         <hr />
         <div className={isHidden ? 'content hidden' : 'content'}>
-          <img className={show === 'hotels' ? 'img' : 'imgCar'} src={sourceImg} alt={`${title}`} />
+          <img
+            className={show === 'hotels' ? 'img' : 'imgCar'}
+            src={sourceImg}
+            alt={`${title}`}
+          />
           {show === 'hotels' ? (
             <div className="detailText">
-              <p>
-                {`Réservé ${reservation} fois dans les dernières 24 heures`}
-              </p>
-              <p>
-                {description}
-              </p>
+              <p
+              >{`Réservé ${reservation} fois dans les dernières 24 heures`}</p>
+              <p>{description}</p>
               <p>
                 {`Arrivée le : ${arrivalDate}`}
                 <br />
@@ -71,18 +70,10 @@ export default class CardDetail extends Component {
           ) : (
             <div>
               <ul>
-                <li>
-                  {`Puissance : ${power}`}
-                </li>
-                <li>
-                  {`Energie : ${energy}`}
-                </li>
-                <li>
-                  {`Année : ${year}`}
-                </li>
-                <li>
-                  {`Prix : ${price}`}
-                </li>
+                <li>{`Puissance : ${power}`}</li>
+                <li>{`Energie : ${energy}`}</li>
+                <li>{`Année : ${year}`}</li>
+                <li>{`Prix : ${price}`}</li>
               </ul>
             </div>
           )}
@@ -90,14 +81,11 @@ export default class CardDetail extends Component {
         {show === 'cars' && (
           <div className={isHidden ? 'publishDate hidden' : 'publishDate'}>
             <hr />
-            <p>
-              Publié le
-              {datePublication}
-            </p>
+            <p>Publié le {datePublication}</p>
           </div>
         )}
       </article>
-    );
+    )
   }
 }
 
@@ -113,8 +101,8 @@ CardDetail.propTypes = {
   price: PropTypes.number,
   show: PropTypes.string.isRequired,
   year: PropTypes.number,
-  datePublication: PropTypes.string,
-};
+  datePublication: PropTypes.string
+}
 
 CardDetail.defaultProps = {
   energy: '',
@@ -125,5 +113,5 @@ CardDetail.defaultProps = {
   reservation: 0,
   description: '',
   arrivalDate: '',
-  departureDate: '',
-};
+  departureDate: ''
+}

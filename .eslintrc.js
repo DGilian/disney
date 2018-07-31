@@ -14,7 +14,12 @@ module.exports = {
     'react/jsx-closing-bracket-location': 0,
     'react/jsx-no-bind': 0,
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
-    'react/jsx-one-expression-per-line': 'error',
-    'react/jsx-indent': ['error', 2],
-  },
-};
+    'react/jsx-indent': [0, 2],
+    'react/jsx-one-expression-per-line': 0,
+    'comma-dangle': ['error', 'never'],
+    semi: [0, 'always'],
+    quotes: ['error', 'single'],
+    'click-events-have-key-events': 0,
+    'react/destructuring-assignment': [0, 'always']
+  }
+}

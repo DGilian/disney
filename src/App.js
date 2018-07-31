@@ -1,34 +1,26 @@
-import React, { Component } from 'react';
-import './App.css';
-import backgroundGrey from './img/Fond.png';
-import vegetation from './img/Image2.png';
-import CardDetail from './components/CardDetail';
+import React, { Component } from 'react'
+import './App.css'
+import backgroundGrey from './img/Fond.png'
+import vegetation from './img/Image2.png'
+import CardDetail from './components/CardDetail'
 
-import dataCars from './json/cars.json';
-import dataHotels from './json/hotels';
+import dataCars from './json/cars.json'
+import dataHotels from './json/hotels'
 
 class App extends Component {
   constructor() {
-    super();
+    super()
     this.state = {
-      show: 'hotels',
-    };
+      show: 'hotels'
+    }
   }
 
-  handleclickCar = () => {
-    this.setState({
-      show: 'cars',
-    });
-  };
-
-  handleclickHotel = () => {
-    this.setState({
-      show: 'hotels',
-    });
-  };
+  handleclick = whatShow => {
+    this.setState(() => ({ show: whatShow }))
+  }
 
   render() {
-    const { show } = this.state;
+    const { show } = this.state
     return (
       <main className="App">
         <div className="container">
@@ -37,14 +29,14 @@ class App extends Component {
               className="backgGrey"
               style={{
                 backgroundImage: `url(${backgroundGrey})`,
-                backgroundSize: 'cover',
+                backgroundSize: 'cover'
               }}
             />
             <section
               className="backgVegetation"
               style={{
                 backgroundImage: `url(${vegetation})`,
-                backgroundSize: 'cover',
+                backgroundSize: 'cover'
               }}
             >
               Hello world
@@ -52,44 +44,54 @@ class App extends Component {
           </section>
           <section className="listContent">
             <div className="containerList">
-              <button type="button" onClick={this.handleclickHotel}>
+              <button
+                type="button"
+                onClick={() => {
+                  this.handleclick('hotels')
+                }}
+              >
                 Hôtels
               </button>
-              <button type="button" onClick={this.handleclickCar}>
+              <button
+                type="button"
+                onClick={() => {
+                  this.handleclick('car')
+                }}
+              >
                 Voitures
               </button>
               {show === 'hotels'
                 ? dataHotels.map(value => (
-                  <CardDetail
-                    key={value.name}
-                    title={value.name}
-                    imgPath={value.imgPath}
-                    reservation={value.nbReservationLast24hours}
-                    description={value.description}
-                    arrivalDate={value.dates.arrivalDate}
-                    departureDate={value.dates.departureDate}
-                    show={show}
+                    <CardDetail
+                      key={value.name}
+                      title={value.name}
+                      imgPath={value.imgPath}
+                      reservation={value.nbReservationLast24hours}
+                      description={value.description}
+                      arrivalDate={value.dates.arrivalDate}
+                      departureDate={value.dates.departureDate}
+                      show={show}
                     />
-                ))
+                  ))
                 : dataCars.map(car => (
-                  <CardDetail
-                    key={car.type}
-                    title={`${car.brand} ${car.type}`}
-                    imgPath={car.imgPath}
-                    power={car.power}
-                    energy={car.energy}
-                    year={car.year}
-                    price={car.price}
-                    datePublication={car.datePublication}
-                    show={show}
+                    <CardDetail
+                      key={car.type}
+                      title={`${car.brand} ${car.type}`}
+                      imgPath={car.imgPath}
+                      power={car.power}
+                      energy={car.energy}
+                      year={car.year}
+                      price={car.price}
+                      datePublication={car.datePublication}
+                      show={show}
                     />
-                ))}
+                  ))}
             </div>
           </section>
         </div>
       </main>
-    );
+    )
   }
 }
 
-export default App;
+export default App
